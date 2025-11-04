@@ -511,7 +511,7 @@ function Home() {
                                 <h3 className="text-xl font-bold mb-4 text-gray-800 dark:text-gray-100">Follow Us</h3>
                                 <div className="flex gap-4">
                                     <a
-                                        href="https://www.instagram.com/dreammerchants.vit/"
+                                        href="https://www.instagram.com/dreammerchantsvit"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-500 rounded-xl flex items-center justify-center hover:scale-110 transition-transform duration-300"
