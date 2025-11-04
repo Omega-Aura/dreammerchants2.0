@@ -27,21 +27,23 @@ const ScrollEffects = () => {
 
         // Fade in and slide up animation for sections
         gsap.utils.toArray('.scroll-fade-in').forEach((elem) => {
+            const isInContactSection = elem.closest('#contact');
             gsap.fromTo(
                 elem,
                 {
                     opacity: 0,
-                    y: 50,
+                    y: 30,
                 },
                 {
                     opacity: 1,
                     y: 0,
-                    duration: 0.8,
-                    ease: 'power2.out',
+                    duration: isInContactSection ? 0.5 : 0.8,
+                    ease: 'power1.out',
                     scrollTrigger: {
                         trigger: elem,
-                        start: 'top 85%',
+                        start: isInContactSection ? 'top 90%' : 'top 85%',
                         toggleActions: 'play none none none',
+                        once: isInContactSection,
                     },
                 }
             );
@@ -49,21 +51,23 @@ const ScrollEffects = () => {
 
         // Scale animation for cards
         gsap.utils.toArray('.scroll-scale').forEach((elem) => {
+            const isInContactSection = elem.closest('#contact');
             gsap.fromTo(
                 elem,
                 {
-                    scale: 0.9,
+                    scale: 0.95,
                     opacity: 0,
                 },
                 {
                     scale: 1,
                     opacity: 1,
-                    duration: 0.6,
-                    ease: 'power2.out',
+                    duration: isInContactSection ? 0.5 : 0.6,
+                    ease: 'power1.out',
                     scrollTrigger: {
                         trigger: elem,
-                        start: 'top 85%',
+                        start: isInContactSection ? 'top 90%' : 'top 85%',
                         toggleActions: 'play none none none',
+                        once: isInContactSection,
                     },
                 }
             );
@@ -98,42 +102,46 @@ const ScrollEffects = () => {
 
         // Horizontal slide animation
         gsap.utils.toArray('.scroll-slide-left').forEach((elem) => {
+            const isInContactSection = elem.closest('#contact');
             gsap.fromTo(
                 elem,
                 {
-                    x: -100,
+                    x: -50,
                     opacity: 0,
                 },
                 {
                     x: 0,
                     opacity: 1,
-                    duration: 0.8,
-                    ease: 'power2.out',
+                    duration: isInContactSection ? 0.6 : 0.8,
+                    ease: 'power1.out',
                     scrollTrigger: {
                         trigger: elem,
-                        start: 'top 85%',
+                        start: isInContactSection ? 'top 90%' : 'top 85%',
                         toggleActions: 'play none none none',
+                        once: isInContactSection,
                     },
                 }
             );
         });
 
         gsap.utils.toArray('.scroll-slide-right').forEach((elem) => {
+            const isInContactSection = elem.closest('#contact');
             gsap.fromTo(
                 elem,
                 {
-                    x: 100,
+                    x: 50,
                     opacity: 0,
                 },
                 {
                     x: 0,
                     opacity: 1,
-                    duration: 0.8,
-                    ease: 'power2.out',
+                    duration: isInContactSection ? 0.6 : 0.8,
+                    ease: 'power1.out',
                     scrollTrigger: {
                         trigger: elem,
-                        start: 'top 85%',
+                        start: isInContactSection ? 'top 90%' : 'top 85%',
                         toggleActions: 'play none none none',
+                        once: isInContactSection,
                     },
                 }
             );
