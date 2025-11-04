@@ -39,12 +39,12 @@ function Team() {
       image: "/assets/images/sans.webp"
     },
     {
-      name: "Ananya",
+      name: "Ananay",
       role: "Training Head",
       image: "/assets/images/ananay.webp"
     },
     {
-      name: "Shrishti",
+      name: "Shristi",
       role: "Marketing Head",
       image: "/assets/images/shristi.webp"
     },
