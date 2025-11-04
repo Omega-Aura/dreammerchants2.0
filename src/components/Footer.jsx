@@ -31,22 +31,22 @@ function Footer() {
             </h3>
             <ul className="space-y-2">
               <li>
-                <a href="/about" className="text-gray-300 hover:text-white transition-colors text-sm">
+                <a href="#about" className="text-gray-300 hover:text-white transition-colors text-sm">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="/events" className="text-gray-300 hover:text-white transition-colors text-sm">
+                <a href="#events" className="text-gray-300 hover:text-white transition-colors text-sm">
                   Events
                 </a>
               </li>
               <li>
-                <a href="/team" className="text-gray-300 hover:text-white transition-colors text-sm">
+                <a href="#team" className="text-gray-300 hover:text-white transition-colors text-sm">
                   Our Team
                 </a>
               </li>
               <li>
-                <a href="/contact" className="text-gray-300 hover:text-white transition-colors text-sm">
+                <a href="#contact" className="text-gray-300 hover:text-white transition-colors text-sm">
                   Contact
                 </a>
               </li>
