@@ -1,88 +1,81 @@
-import React from 'react';
-
 function Team() {
   const executiveTeam = [
     {
-      name: "Rishabh Arora",
+      name: "Ankit Singh",
       role: "Chairperson",
-      image: "/assets/images/CP.jpg"
+      image: "/assets/images/Ankit.webp"
     },
     {
-      name: "Saksham Agarwal",
+      name: "Siddhant",
       role: "Vice Chairperson",
-      image: "/assets/images/VC.jpg"
+      image: "/assets/images/sid.webp"
     },
     {
-      name: "Dathri Lekkala",
+      name: "Utkarsh",
       role: "Secretary",
-      image: "/assets/images/dathri.jpg"
+      image: "/assets/images/utkatsh.webp"
     },
     {
-      name: "Krutarth Trivedi",
+      name: "Aritra",
       role: "Co Secretary",
-      image: "/assets/images/krutarth.jpg"
+      image: "/assets/images/aritra.webp"
     }
   ];
 
   const domainHeads = [
     {
-      name: "Atharv Dewangan",
+      name: "Jai",
       role: "Research Head",
-      image: "/assets/images/atharv.jpg"
+      image: "/assets/images/jai.webp"
     },
     {
-      name: "Karan Sagpriya",
+      name: "Atharv",
       role: "Operations Head",
-      image: "/assets/images/karan.jpg"
+      image: "/assets/images/atharv.webp"
     },
     {
-      name: "Namyaa Singh",
+      name: "Sanskriti",
       role: "Design Head",
-      image: "/assets/images/namyaa.jpg"
+      image: "/assets/images/sans.webp"
     },
     {
-      name: "Piyush Tuteja",
-      role: "Collab & Training Head",
-      image: "/assets/images/piyush.jpg"
+      name: "Ananya",
+      role: "Training Head",
+      image: "/assets/images/ananay.webp"
     },
     {
-      name: "Anushka Tiwari",
+      name: "Shrishti",
       role: "Marketing Head",
-      image: "/assets/images/anushka.jpg"
+      image: "/assets/images/shristi.webp"
     },
     {
-      name: "Manya Wadhwa",
-      role: "Content Head",
-      image: "/assets/images/manya.jpg"
+      name: "Ajinkya",
+      role: "Editorial Head",
+      image: "/assets/images/ajinkya.webp"
     },
     {
-      name: "Pranav Shankar",
-      role: "Creative Head",
-      image: "/assets/images/pranav.jpg"
+      name: "Uditanshu",
+      role: "Finance Head",
+      image: "/assets/images/udit.webp"
     },
     {
-      name: "Rathi Kundariya",
-      role: "HR Head",
-      image: "/assets/images/rathi.jpg"
-    },
-    {
-      name: "Milinid Madhukar",
+      name: "Prisha",
       role: "Technical Head",
-      image: "/assets/images/milinid.jpg"
+      image: "/assets/images/prisha.webp"
     }
   ];
 
   return (
     <section className="py-16 px-4">
       <h2 className="text-4xl font-bold text-center mb-12">Our Team</h2>
-      
+
       <div className="max-w-7xl mx-auto">
         <h3 className="text-2xl font-semibold mb-8 text-center">Executive Head</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {executiveTeam.map((member, index) => (
             <div key={index} className="text-center">
-              <img 
-                src={member.image} 
+              <img
+                src={member.image}
                 alt={member.name}
                 className="w-48 h-48 rounded-full mx-auto mb-4 object-cover"
               />
@@ -96,8 +89,8 @@ function Team() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {domainHeads.map((member, index) => (
             <div key={index} className="text-center">
-              <img 
-                src={member.image} 
+              <img
+                src={member.image}
                 alt={member.name}
                 className="w-48 h-48 rounded-full mx-auto mb-4 object-cover"
               />
