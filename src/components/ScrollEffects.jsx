@@ -36,13 +36,12 @@ const ScrollEffects = () => {
                 {
                     opacity: 1,
                     y: 0,
-                    duration: 1,
-                    ease: 'power3.out',
+                    duration: 0.8,
+                    ease: 'power2.out',
                     scrollTrigger: {
                         trigger: elem,
-                        start: 'top 80%',
-                        end: 'top 50%',
-                        toggleActions: 'play none none reverse',
+                        start: 'top 85%',
+                        toggleActions: 'play none none none',
                     },
                 }
             );
@@ -53,19 +52,18 @@ const ScrollEffects = () => {
             gsap.fromTo(
                 elem,
                 {
-                    scale: 0.8,
+                    scale: 0.9,
                     opacity: 0,
                 },
                 {
                     scale: 1,
                     opacity: 1,
-                    duration: 0.8,
-                    ease: 'back.out(1.7)',
+                    duration: 0.6,
+                    ease: 'power2.out',
                     scrollTrigger: {
                         trigger: elem,
                         start: 'top 85%',
-                        end: 'top 60%',
-                        toggleActions: 'play none none reverse',
+                        toggleActions: 'play none none none',
                     },
                 }
             );
@@ -109,13 +107,12 @@ const ScrollEffects = () => {
                 {
                     x: 0,
                     opacity: 1,
-                    duration: 1,
-                    ease: 'power3.out',
+                    duration: 0.8,
+                    ease: 'power2.out',
                     scrollTrigger: {
                         trigger: elem,
-                        start: 'top 80%',
-                        end: 'top 50%',
-                        toggleActions: 'play none none reverse',
+                        start: 'top 85%',
+                        toggleActions: 'play none none none',
                     },
                 }
             );
@@ -131,13 +128,12 @@ const ScrollEffects = () => {
                 {
                     x: 0,
                     opacity: 1,
-                    duration: 1,
-                    ease: 'power3.out',
+                    duration: 0.8,
+                    ease: 'power2.out',
                     scrollTrigger: {
                         trigger: elem,
-                        start: 'top 80%',
-                        end: 'top 50%',
-                        toggleActions: 'play none none reverse',
+                        start: 'top 85%',
+                        toggleActions: 'play none none none',
                     },
                 }
             );
