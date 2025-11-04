@@ -33,8 +33,8 @@ function Home() {
         { name: "Jai", role: "Research Head", image: "/assets/images/jai.webp" },
         { name: "Atharv", role: "Operations Head", image: "/assets/images/atharv.webp" },
         { name: "Sanskriti", role: "Design Head", image: "/assets/images/sans.webp" },
-        { name: "Ananya", role: "Training Head", image: "/assets/images/ananay.webp" },
-        { name: "Shrishti", role: "Marketing Head", image: "/assets/images/shristi.webp" },
+        { name: "Ananay", role: "Training Head", image: "/assets/images/ananay.webp" },
+        { name: "Shristi", role: "Marketing Head", image: "/assets/images/shristi.webp" },
         { name: "Ajinkya", role: "Tech Head", image: "/assets/images/ajinkya.webp" },
         { name: "Prisha", role: "Events Head", image: "/assets/images/prisha.webp" },
         { name: "Udit", role: "Content Head", image: "/assets/images/udit.webp" }
