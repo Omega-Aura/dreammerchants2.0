@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { useDarkMode } from '../contexts/DarkModeContext';
@@ -17,7 +17,7 @@ export default function BubbleMenu() {
     const menuBg = darkMode ? '#1f2937' : '#ffffff';
     const menuContentColor = darkMode ? '#f3f4f6' : '#111827';
 
-    const menuItems = [
+    const menuItems = useMemo(() => [
         {
             label: 'home',
             to: '/',
@@ -53,7 +53,7 @@ export default function BubbleMenu() {
             rotation: -8,
             hoverStyles: { bgColor: '#8b5cf6', textColor: '#ffffff' }
         }
-    ];
+    ], []);
 
     const handleToggle = () => {
         const nextState = !isMenuOpen;
@@ -138,7 +138,7 @@ export default function BubbleMenu() {
 
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
-    }, [isMenuOpen]);
+    }, [isMenuOpen, menuItems]);
 
     return (
         <>

@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useState } from 'react';
 
 const DarkModeContext = createContext();
 
+// eslint-disable-next-line react/prop-types
 export function DarkModeProvider({ children }) {
     const [darkMode, setDarkMode] = useState(() => {
         // Check localStorage or system preference
@@ -30,6 +31,7 @@ export function DarkModeProvider({ children }) {
     );
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function useDarkMode() {
     const context = useContext(DarkModeContext);
     if (context === undefined) {
