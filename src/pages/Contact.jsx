@@ -1,8 +1,8 @@
 function Contact() {
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-slate-50 via-green-50 to-teal-50">
+    <div className="relative min-h-screen bg-gradient-to-br from-slate-50 via-green-50 to-teal-50 dark:from-gray-900 dark:via-green-950 dark:to-teal-950 transition-colors duration-300 pt-16">
       {/* Squares Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+      <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none">
         <div className="absolute inset-0" style={{
           backgroundImage: `
             linear-gradient(to right, #000 1px, transparent 1px),
@@ -16,11 +16,11 @@ function Contact() {
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-green-600 to-teal-600 dark:from-green-400 dark:to-teal-400 bg-clip-text text-transparent">
               Get In Touch
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-green-600 to-teal-600 mx-auto mb-6 rounded-full"></div>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <div className="w-24 h-1 bg-gradient-to-r from-green-600 to-teal-600 dark:from-green-400 dark:to-teal-400 mx-auto mb-6 rounded-full"></div>
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               Have questions or want to collaborate? We&apos;d love to hear from you. Drop us a message!
             </p>
           </div>
@@ -29,7 +29,7 @@ function Contact() {
             {/* Contact Info */}
             <div className="space-y-6">
               {/* Email Card */}
-              <div className="group bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-200/50 hover:border-green-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+              <div className="group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-200/50 dark:border-gray-700/50 hover:border-green-300 dark:hover:border-green-600 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-500 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -37,10 +37,10 @@ function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-2 text-gray-800">Email Us</h3>
+                    <h3 className="text-xl font-bold mb-2 text-gray-800 dark:text-gray-100">Email Us</h3>
                     <a
                       href="mailto:dreammerchantsvit@gmail.com"
-                      className="text-green-600 hover:text-green-700 font-medium transition-colors"
+                      className="text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 font-medium transition-colors"
                     >
                       dreammerchantsvit@gmail.com
                     </a>
@@ -49,7 +49,7 @@ function Contact() {
               </div>
 
               {/* Social Media Card */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-200/50">
+              <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-200/50 dark:border-gray-700/50">
                 <div className="flex items-start gap-4 mb-6">
                   <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-green-500 rounded-xl flex items-center justify-center flex-shrink-0">
                     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -57,8 +57,8 @@ function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-2 text-gray-800">Follow Us</h3>
-                    <p className="text-gray-600 mb-4">Connect with us on social media</p>
+                    <h3 className="text-xl font-bold mb-2 text-gray-800 dark:text-gray-100">Follow Us</h3>
+                    <p className="text-gray-600 dark:text-gray-300 mb-4">Connect with us on social media</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
@@ -96,7 +96,7 @@ function Contact() {
               </div>
 
               {/* Location Card */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-200/50">
+              <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-200/50 dark:border-gray-700/50">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center flex-shrink-0">
                     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -105,43 +105,43 @@ function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-2 text-gray-800">Location</h3>
-                    <p className="text-gray-600">Vellore Institute of Technology<br />Vellore, Tamil Nadu</p>
+                    <h3 className="text-xl font-bold mb-2 text-gray-800 dark:text-gray-100">Location</h3>
+                    <p className="text-gray-600 dark:text-gray-300">Vellore Institute of Technology<br />Vellore, Tamil Nadu</p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Contact Form */}
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-200/50 shadow-xl">
-              <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent">
+            <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-200/50 dark:border-gray-700/50 shadow-xl">
+              <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-green-600 to-teal-600 dark:from-green-400 dark:to-teal-400 bg-clip-text text-transparent">
                 Send us a Message
               </h3>
               <form className="space-y-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Your Name</label>
                   <input
                     type="text"
                     placeholder="John Doe"
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 dark:focus:ring-green-400 focus:border-transparent transition-all duration-300"
                     required
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Your Email</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Your Email</label>
                   <input
                     type="email"
                     placeholder="john@example.com"
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 dark:focus:ring-green-400 focus:border-transparent transition-all duration-300"
                     required
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Your Message</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Your Message</label>
                   <textarea
                     placeholder="Tell us how we can help you..."
                     rows="5"
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 resize-none"
+                    className="w-full px-4 py-3 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 dark:focus:ring-green-400 focus:border-transparent transition-all duration-300 resize-none"
                     required
                   ></textarea>
                 </div>

@@ -66,9 +66,9 @@ function Team() {
   ];
 
   return (
-    <section className="relative min-h-screen py-16 px-4 bg-gradient-to-br from-slate-50 via-purple-50 to-pink-50">
+    <section className="relative min-h-screen py-16 px-4 bg-gradient-to-br from-slate-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-purple-950 dark:to-pink-950 transition-colors duration-300 pt-32">
       {/* Squares Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+      <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none">
         <div className="absolute inset-0" style={{
           backgroundImage: `
             linear-gradient(to right, #000 1px, transparent 1px),
@@ -79,14 +79,14 @@ function Team() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
-        <h2 className="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+        <h2 className="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
           Our Team
         </h2>
-        <div className="w-24 h-1 bg-gradient-to-r from-purple-600 to-pink-600 mx-auto mb-20 rounded-full"></div>
+        <div className="w-24 h-1 bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 mx-auto mb-20 rounded-full"></div>
 
         {/* Executive Team */}
         <div className="mb-20">
-          <h3 className="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+          <h3 className="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
             Executive Heads
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -124,7 +124,7 @@ function Team() {
 
         {/* Domain Heads */}
         <div>
-          <h3 className="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+          <h3 className="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-pink-600 to-purple-600 dark:from-pink-400 dark:to-purple-400 bg-clip-text text-transparent">
             Domain Heads
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
