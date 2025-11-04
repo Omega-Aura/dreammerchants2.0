@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect, useMemo } from 'react';
-import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { useDarkMode } from '../contexts/DarkModeContext';
 import DarkModeToggle from './DarkModeToggle';
@@ -20,35 +19,35 @@ export default function BubbleMenu() {
     const menuItems = useMemo(() => [
         {
             label: 'home',
-            to: '/',
+            to: '#home',
             ariaLabel: 'Home',
             rotation: -8,
             hoverStyles: { bgColor: '#3b82f6', textColor: '#ffffff' }
         },
         {
             label: 'about',
-            to: '/about',
+            to: '#about',
             ariaLabel: 'About',
             rotation: 8,
             hoverStyles: { bgColor: '#10b981', textColor: '#ffffff' }
         },
         {
             label: 'events',
-            to: '/events',
+            to: '#events',
             ariaLabel: 'Events',
             rotation: 8,
             hoverStyles: { bgColor: '#f59e0b', textColor: '#ffffff' }
         },
         {
             label: 'team',
-            to: '/team',
+            to: '#team',
             ariaLabel: 'Team',
             rotation: 8,
             hoverStyles: { bgColor: '#ef4444', textColor: '#ffffff' }
         },
         {
             label: 'contact',
-            to: '/contact',
+            to: '#contact',
             ariaLabel: 'Contact',
             rotation: -8,
             hoverStyles: { bgColor: '#8b5cf6', textColor: '#ffffff' }
@@ -146,7 +145,7 @@ export default function BubbleMenu() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-16">
                         {/* Logo */}
-                        <Link to="/" className="flex items-center gap-3 group">
+                        <a href="#home" className="flex items-center gap-3 group">
                             <img
                                 src="/assets/images/logo.jpg"
                                 alt="Dream Merchants Logo"
@@ -155,18 +154,18 @@ export default function BubbleMenu() {
                             <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent hidden sm:block">
                                 Dream Merchants
                             </span>
-                        </Link>
+                        </a>
 
                         {/* Desktop Menu */}
                         <div className="hidden md:flex items-center gap-6">
                             {menuItems.map((item) => (
-                                <Link
+                                <a
                                     key={item.to}
-                                    to={item.to}
+                                    href={item.to}
                                     className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors duration-200 capitalize"
                                 >
                                     {item.label}
-                                </Link>
+                                </a>
                             ))}
                             <DarkModeToggle />
                         </div>
@@ -198,9 +197,9 @@ export default function BubbleMenu() {
                     <ul className="pill-list" role="menu" aria-label="Menu links">
                         {menuItems.map((item, idx) => (
                             <li key={idx} role="none" className="pill-col">
-                                <Link
+                                <a
                                     role="menuitem"
-                                    to={item.to}
+                                    href={item.to}
                                     aria-label={item.ariaLabel || item.label}
                                     className="pill-link"
                                     onClick={handleLinkClick}
@@ -223,7 +222,7 @@ export default function BubbleMenu() {
                                     >
                                         {item.label}
                                     </span>
-                                </Link>
+                                </a>
                             </li>
                         ))}
                     </ul>

@@ -25,7 +25,7 @@ function Home() {
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-indigo-950 dark:to-purple-950 transition-colors duration-300 pt-16">
       {/* Squares Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none">
+      <div className="squares-pattern absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none">
         <div className="absolute inset-0" style={{
           backgroundImage: `
             linear-gradient(to right, #000 1px, transparent 1px),
@@ -43,7 +43,7 @@ function Home() {
       <section className="relative min-h-[85vh] flex items-center justify-center px-4">
         <div className="max-w-5xl mx-auto text-center">
           {/* Animated Badge */}
-          <div className="inline-flex items-center gap-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-blue-200/50 dark:border-blue-700/50 rounded-full px-6 py-3 mb-8 shadow-lg hover:shadow-xl transition-all duration-300 animate-scale-in">
+          <div className="scroll-fade-in inline-flex items-center gap-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-blue-200/50 dark:border-blue-700/50 rounded-full px-6 py-3 mb-8 shadow-lg hover:shadow-xl transition-all duration-300 animate-scale-in">
             <span className="relative flex h-3 w-3">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
@@ -54,18 +54,18 @@ function Home() {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight animate-fade-in">
+          <h1 className="scroll-scale text-6xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight animate-fade-in">
             <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400 bg-clip-text text-transparent">
               Dream Merchants
             </span>
           </h1>
 
           {/* Subheading */}
-          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-4 font-medium animate-slide-in-left">
+          <p className="scroll-slide-left text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-4 font-medium animate-slide-in-left">
             Business • Management • Entrepreneurship • Finance
           </p>
 
-          <p className="text-lg text-gray-500 dark:text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed animate-slide-in-right">
+          <p className="scroll-slide-right text-lg text-gray-500 dark:text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed animate-slide-in-right">
             Empowering future leaders and corporate captains through financial literacy,
             strategic thinking, and hands-on business experience.
           </p>
@@ -97,9 +97,9 @@ function Home() {
       {/* Features Section */}
       <section ref={featuresRef} className="relative py-20 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="scroll-stagger-container grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Feature 1 - Financial Excellence */}
-            <div className="feature-card group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-200/50 dark:border-gray-700/50 hover:border-blue-300 dark:hover:border-blue-600 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 opacity-0">
+            <div className="scroll-stagger-item feature-card group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-200/50 dark:border-gray-700/50 hover:border-blue-300 dark:hover:border-blue-600 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 opacity-0">
               <div className="w-16 h-16 mb-6 border-2 border-gray-900 dark:border-white rounded-2xl flex items-center justify-center bg-transparent group-hover:rotate-6 transition-transform duration-300">
                 <svg className="w-8 h-8 text-gray-900 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -114,7 +114,7 @@ function Home() {
             </div>
 
             {/* Feature 2 - Business Leadership */}
-            <div className="feature-card group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-200/50 dark:border-gray-700/50 hover:border-purple-300 dark:hover:border-purple-600 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 opacity-0">
+            <div className="scroll-stagger-item feature-card group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-200/50 dark:border-gray-700/50 hover:border-purple-300 dark:hover:border-purple-600 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 opacity-0">
               <div className="w-16 h-16 mb-6 border-2 border-gray-900 dark:border-white rounded-2xl flex items-center justify-center bg-transparent group-hover:rotate-6 transition-transform duration-300">
                 <svg className="w-8 h-8 text-gray-900 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -129,7 +129,7 @@ function Home() {
             </div>
 
             {/* Feature 3 - Community & Network */}
-            <div className="feature-card group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-200/50 dark:border-gray-700/50 hover:border-indigo-300 dark:hover:border-indigo-600 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 opacity-0">
+            <div className="scroll-stagger-item feature-card group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-200/50 dark:border-gray-700/50 hover:border-indigo-300 dark:hover:border-indigo-600 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 opacity-0">
               <div className="w-16 h-16 mb-6 border-2 border-gray-900 dark:border-white rounded-2xl flex items-center justify-center bg-transparent group-hover:rotate-6 transition-transform duration-300">
                 <svg className="w-8 h-8 text-gray-900 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />

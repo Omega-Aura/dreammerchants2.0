@@ -3,8 +3,45 @@
 @tailwind utilities;
 
 @layer base {
+
+  /* Hide ALL scrollbars */
+  * {
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+  }
+
+  *::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
+    width: 0;
+    height: 0;
+  }
+
+  html {
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  html::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
   body {
     @apply bg-slate-50 text-gray-900 font-sans antialiased dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  body::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
   }
 
   h1,

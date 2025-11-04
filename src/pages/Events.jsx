@@ -46,7 +46,7 @@ function Events() {
   return (
     <section className="relative min-h-screen py-16 px-4 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-indigo-950 dark:to-purple-950 transition-colors duration-300 pt-32">
       {/* Squares Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none">
+      <div className="squares-pattern absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none">
         <div className="absolute inset-0" style={{
           backgroundImage: `
             linear-gradient(to right, #000 1px, transparent 1px),
@@ -58,16 +58,16 @@ function Events() {
 
       {/* Upcoming Events Section */}
       <div className="relative z-10 mb-20">
-        <h2 className="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent">
+        <h2 className="scroll-fade-in text-5xl font-bold text-center mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent">
           Upcoming Events
         </h2>
-        <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mb-16 rounded-full"></div>
+        <div className="scroll-scale w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mb-16 rounded-full"></div>
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="scroll-stagger-container max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           {upcomingEvents.map((event, index) => (
             <div
               key={index}
-              className="group relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-200/50 dark:border-gray-700/50 hover:border-blue-300 dark:hover:border-blue-600 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20 hover:-translate-y-2"
+              className="scroll-stagger-item group relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-200/50 dark:border-gray-700/50 hover:border-blue-300 dark:hover:border-blue-600 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20 hover:-translate-y-2"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
@@ -109,16 +109,16 @@ function Events() {
 
       {/* Previous Events Section */}
       <div className="relative z-10">
-        <h2 className="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-gray-600 to-gray-800 dark:from-gray-400 dark:to-gray-300 bg-clip-text text-transparent">
+        <h2 className="scroll-fade-in text-5xl font-bold text-center mb-4 bg-gradient-to-r from-gray-600 to-gray-800 dark:from-gray-400 dark:to-gray-300 bg-clip-text text-transparent">
           Previous Events
         </h2>
-        <div className="w-24 h-1 bg-gradient-to-r from-gray-600 to-gray-800 dark:from-gray-400 dark:to-gray-300 mx-auto mb-16 rounded-full"></div>
+        <div className="scroll-scale w-24 h-1 bg-gradient-to-r from-gray-600 to-gray-800 dark:from-gray-400 dark:to-gray-300 mx-auto mb-16 rounded-full"></div>
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="scroll-stagger-container max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {previousEvents.map((event, index) => (
             <div
               key={index}
-              className="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-200/50 dark:border-gray-700/50 hover:border-gray-300 dark:hover:border-gray-600 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+              className="scroll-stagger-item group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-200/50 dark:border-gray-700/50 hover:border-gray-300 dark:hover:border-gray-600 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
             >
               <div className="relative aspect-square overflow-hidden">
                 <img
