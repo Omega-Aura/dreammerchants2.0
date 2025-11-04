@@ -4,10 +4,15 @@
 
 @layer base {
   body {
-    @apply bg-slate-50 text-gray-900 font-sans antialiased;
+    @apply bg-slate-50 text-gray-900 font-sans antialiased dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-bold;
   }
 
@@ -16,7 +21,71 @@
   }
 }
 
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
 @layer components {
+
   /* Modern gradient text */
   .gradient-text {
     @apply bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent;
@@ -34,21 +103,16 @@
 
   /* Modern button */
   .btn-primary {
-    @apply inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 
-    text-white px-6 py-3 rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 
-    transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1;
+    @apply inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm text-gray-800 
-    px-6 py-3 rounded-xl font-semibold border border-gray-200 hover:border-blue-300 
-    hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1;
+    @apply inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm text-gray-800 px-6 py-3 rounded-xl font-semibold border border-gray-200 hover:border-blue-300 hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1;
   }
 
   /* Card styles */
   .card {
-    @apply bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 
-    transition-all duration-300;
+    @apply bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 transition-all duration-300;
   }
 
   .card-hover {
@@ -57,6 +121,7 @@
 }
 
 @layer utilities {
+
   /* Custom scrollbar */
   .scrollbar-thin::-webkit-scrollbar {
     width: 8px;
@@ -64,10 +129,64 @@
   }
 
   .scrollbar-thin::-webkit-scrollbar-track {
-    @apply bg-gray-100 rounded-full;
+    @apply bg-gray-100 rounded-full dark:bg-gray-800;
   }
 
   .scrollbar-thin::-webkit-scrollbar-thumb {
-    @apply bg-gray-300 rounded-full hover:bg-gray-400;
+    @apply bg-gray-300 rounded-full hover:bg-gray-400 dark:bg-gray-600 dark:hover:bg-gray-500;
+  }
+
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.8s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.8s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  /* Stagger delays */
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  /* Initial hidden state */
+  .animate-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .animate-in.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

@@ -38,8 +38,8 @@ function About() {
                   Our Mission
                 </h2>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  We are a university-based financial club dedicated to fostering financial literacy and leadership among students. 
-                  Dream Merchants provides a platform for future leaders and corporate captains. Our objective is to develop an 
+                  We are a university-based financial club dedicated to fostering financial literacy and leadership among students.
+                  Dream Merchants provides a platform for future leaders and corporate captains. Our objective is to develop an
                   interest in finance, business, and entrepreneurship while offering opportunities to explore careers in finance and trade.
                 </p>
               </div>
@@ -107,7 +107,7 @@ function About() {
             <p className="text-lg mb-6 text-white/90">
               Be part of VIT&apos;s leading business and finance club. Connect with like-minded individuals and grow together.
             </p>
-            <a 
+            <a
               href="/contact"
               className="inline-flex items-center gap-2 bg-white text-indigo-600 px-8 py-3 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
             >
