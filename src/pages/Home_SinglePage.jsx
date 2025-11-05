@@ -89,7 +89,7 @@ function Home() {
             title: "Cashino!",
             date: "Riviera'26",
             image: "/assets/images/cashino 2.0.jpg",
-            registerLink: "https://riviera.vit.ac.in/events/evt_685c6fa234974d9f9d653d973f0b7b7b",
+            registerLink: "https://riviera.vit.ac.in/",
             description: "A thrilling financial casino experience where strategy meets fortune."
         }
     ], []);
