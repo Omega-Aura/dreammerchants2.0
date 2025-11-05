@@ -139,7 +139,7 @@ function Home() {
                             <span className="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
                         </span>
                         <span className="text-sm font-medium bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent">
-                            VIT&apos;s Premier Business & Finance Club
+                            VIT&apos;s Premier Finance & Tech Club
                         </span>
                     </div>
 
@@ -152,7 +152,7 @@ function Home() {
 
                     {/* Subheading */}
                     <p className="scroll-slide-left text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-4 font-medium animate-slide-in-left">
-                        Business • Management • Entrepreneurship • Finance
+                        Finance • Technology • Innovation • Trading
                     </p>
 
                     <p className="scroll-slide-right text-lg text-gray-500 dark:text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed animate-slide-in-right">
@@ -315,7 +315,7 @@ function Home() {
                     <div className="scroll-slide-right max-w-4xl mx-auto text-center bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-gray-200/50 dark:border-gray-700/50 shadow-xl">
                         <h3 className="text-3xl font-bold mb-4 text-gray-800 dark:text-gray-100">Join Our Community</h3>
                         <p className="text-lg mb-6 text-gray-700 dark:text-gray-200">
-                            Be part of VIT&apos;s leading business and finance club. Connect with like-minded individuals and grow together.
+                            Be part of VIT&apos;s leading finance and tech club. Connect with like-minded individuals and grow together.
                         </p>
                         <a
                             href="#contact"

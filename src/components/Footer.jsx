@@ -20,7 +20,7 @@ function Footer() {
               Dream Merchants
             </h3>
             <p className="text-gray-300 text-sm leading-relaxed">
-              VIT&apos;s premier business and finance club, fostering financial literacy and leadership among students.
+              VIT&apos;s premier finance and tech club, fostering financial literacy and leadership among students.
             </p>
           </div>
 
