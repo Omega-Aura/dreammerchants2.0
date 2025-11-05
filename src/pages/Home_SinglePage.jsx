@@ -1,4 +1,39 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useMemo, useCallback } from 'react';
+
+// Reusable Icon Components
+const FinanceIcon = () => (
+    <svg className="w-8 h-8 text-gray-900 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+);
+
+const BusinessIcon = () => (
+    <svg className="w-8 h-8 text-gray-900 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+    </svg>
+);
+
+const CommunityIcon = () => (
+    <svg className="w-8 h-8 text-gray-900 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+    </svg>
+);
+
+const ArrowIcon = () => (
+    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+    </svg>
+);
+
+// Reusable pattern background component
+const SquaresPattern = () => (
+    <div className="squares-pattern absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none">
+        <div className="absolute inset-0" style={{
+            backgroundImage: `linear-gradient(to right, #000 1px, transparent 1px), linear-gradient(to bottom, #000 1px, transparent 1px)`,
+            backgroundSize: '40px 40px'
+        }}></div>
+    </div>
+);
 
 function Home() {
     const featuresRef = useRef(null);
@@ -8,40 +43,41 @@ function Home() {
         message: ''
     });
 
-    const handleInputChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
-    };
+    const handleInputChange = useCallback((e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    }, []);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = useCallback((e) => {
         e.preventDefault();
         alert('Thank you for your message! We will get back to you soon.');
         setFormData({ name: '', email: '', message: '' });
-    };
+    }, []);
 
-    // Team data
-    const executiveTeam = [
+    // Memoized Team data
+    const executiveTeam = useMemo(() => [
         { name: "Ankit Singh", role: "Chairperson", image: "/assets/images/Ankit.webp" },
         { name: "Siddhant", role: "Vice Chairperson", image: "/assets/images/sid.webp" },
         { name: "Utkarsh", role: "Secretary", image: "/assets/images/utkatsh.webp" },
         { name: "Aritra", role: "Co Secretary", image: "/assets/images/aritra.webp" }
-    ];
+    ], []);
 
-    const domainHeads = [
+    const domainHeads = useMemo(() => [
         { name: "Jai", role: "Research Head", image: "/assets/images/jai.webp" },
         { name: "Atharv", role: "Operations Head", image: "/assets/images/atharv.webp" },
         { name: "Sanskriti", role: "Design Head", image: "/assets/images/sans.webp" },
         { name: "Ananay", role: "Training Head", image: "/assets/images/ananay.webp" },
         { name: "Shristi", role: "Marketing Head", image: "/assets/images/shristi.webp" },
-        { name: "Ajinkya", role: "Tech Head", image: "/assets/images/ajinkya.webp" },
-        { name: "Prisha", role: "Events Head", image: "/assets/images/prisha.webp" },
-        { name: "Udit", role: "Content Head", image: "/assets/images/udit.webp" }
-    ];
+        { name: "Ajinkya", role: "Editorial Head", image: "/assets/images/ajinkya.webp" },
+        { name: "Prisha", role: "Technical Head", image: "/assets/images/prisha.webp" },
+        { name: "Udit", role: "Finance Head", image: "/assets/images/udit.webp" }
+    ], []);
 
-    // Events data
-    const upcomingEvents = [
+    // Memoized Events data
+    const upcomingEvents = useMemo(() => [
         {
             title: "Stockastic",
             date: "TBA",
@@ -56,14 +92,14 @@ function Home() {
             registerLink: "https://riviera.vit.ac.in/events/evt_685c6fa234974d9f9d653d973f0b7b7b",
             description: "A thrilling financial casino experience where strategy meets fortune."
         }
-    ];
+    ], []);
 
-    const previousEvents = [
+    const previousEvents = useMemo(() => [
         { title: "TechCraft", date: "3rd February 2025", image: "/assets/images/techcraft.jpg" },
         { title: "Housie!", date: "22nd February 2025", image: "/assets/images/housie.webp" },
         { title: "Bricks by Bid", date: "27th and 28th September 2025", image: "/assets/images/bbb.png" },
         { title: "Dream Team", date: "21st to 23rd October 2025", image: "/assets/images/dreamteam.jpg" }
-    ];
+    ], []);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -89,16 +125,7 @@ function Home() {
 
             {/* HERO SECTION */}
             <section id="home" className="relative min-h-screen flex items-center justify-center px-4 pt-16">
-                {/* Squares Background Pattern */}
-                <div className="squares-pattern absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none">
-                    <div className="absolute inset-0" style={{
-                        backgroundImage: `
-              linear-gradient(to right, #000 1px, transparent 1px),
-              linear-gradient(to bottom, #000 1px, transparent 1px)
-            `,
-                        backgroundSize: '40px 40px'
-                    }}></div>
-                </div>
+                <SquaresPattern />
 
                 {/* Floating orbs */}
                 <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/20 dark:bg-blue-500/10 rounded-full blur-3xl animate-float"></div>
@@ -140,18 +167,18 @@ function Home() {
                             className="group inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-blue-500/50 hover:-translate-y-1"
                         >
                             Learn More
-                            <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                            </svg>
+                            <span className="group-hover:translate-x-1 transition-transform inline-block">
+                                <ArrowIcon />
+                            </span>
                         </a>
                         <a
                             href="#events"
                             className="group inline-flex items-center gap-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm text-gray-800 dark:text-gray-200 px-8 py-4 rounded-xl font-semibold border border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-600 hover:bg-white dark:hover:bg-gray-800 transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1"
                         >
                             Explore Events
-                            <svg className="w-5 h-5 group-hover:rotate-90 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                            </svg>
+                            <span className="group-hover:rotate-90 transition-transform inline-block">
+                                <ArrowIcon />
+                            </span>
                         </a>
                     </div>
                 </div>
@@ -164,9 +191,7 @@ function Home() {
                         {/* Feature 1 */}
                         <div className="scroll-stagger-item feature-card group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-200/50 dark:border-gray-700/50 hover:border-blue-300 dark:hover:border-blue-600 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 opacity-0">
                             <div className="w-16 h-16 mb-6 border-2 border-gray-900 dark:border-white rounded-2xl flex items-center justify-center bg-transparent group-hover:rotate-6 transition-transform duration-300">
-                                <svg className="w-8 h-8 text-gray-900 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
+                                <FinanceIcon />
                             </div>
                             <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent">
                                 Financial Excellence
@@ -179,9 +204,7 @@ function Home() {
                         {/* Feature 2 */}
                         <div className="scroll-stagger-item feature-card group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-200/50 dark:border-gray-700/50 hover:border-purple-300 dark:hover:border-purple-600 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 opacity-0">
                             <div className="w-16 h-16 mb-6 border-2 border-gray-900 dark:border-white rounded-2xl flex items-center justify-center bg-transparent group-hover:rotate-6 transition-transform duration-300">
-                                <svg className="w-8 h-8 text-gray-900 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                </svg>
+                                <BusinessIcon />
                             </div>
                             <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
                                 Business Leadership
@@ -194,9 +217,7 @@ function Home() {
                         {/* Feature 3 */}
                         <div className="scroll-stagger-item feature-card group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-200/50 dark:border-gray-700/50 hover:border-indigo-300 dark:hover:border-indigo-600 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 opacity-0">
                             <div className="w-16 h-16 mb-6 border-2 border-gray-900 dark:border-white rounded-2xl flex items-center justify-center bg-transparent group-hover:rotate-6 transition-transform duration-300">
-                                <svg className="w-8 h-8 text-gray-900 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                                </svg>
+                                <CommunityIcon />
                             </div>
                             <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-indigo-600 to-blue-600 dark:from-indigo-400 dark:to-blue-400 bg-clip-text text-transparent">
                                 Community & Network
@@ -211,12 +232,7 @@ function Home() {
 
             {/* ABOUT SECTION */}
             <section id="about" className="relative py-20 px-4 bg-gradient-to-br from-slate-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-indigo-950 dark:to-purple-950">
-                <div className="squares-pattern absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none">
-                    <div className="absolute inset-0" style={{
-                        backgroundImage: `linear-gradient(to right, #000 1px, transparent 1px), linear-gradient(to bottom, #000 1px, transparent 1px)`,
-                        backgroundSize: '40px 40px'
-                    }}></div>
-                </div>
+                <SquaresPattern />
 
                 <div className="relative z-10 max-w-7xl mx-auto">
                     {/* Header */}
@@ -316,12 +332,7 @@ function Home() {
 
             {/* EVENTS SECTION */}
             <section id="events" className="relative py-20 px-4 bg-white/50 dark:bg-gray-900/50">
-                <div className="squares-pattern absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none">
-                    <div className="absolute inset-0" style={{
-                        backgroundImage: `linear-gradient(to right, #000 1px, transparent 1px), linear-gradient(to bottom, #000 1px, transparent 1px)`,
-                        backgroundSize: '40px 40px'
-                    }}></div>
-                </div>
+                <SquaresPattern />
 
                 <div className="relative z-10">
                     {/* Upcoming Events */}
@@ -398,12 +409,7 @@ function Home() {
 
             {/* TEAM SECTION */}
             <section id="team" className="relative py-20 px-4 bg-gradient-to-br from-slate-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-purple-950 dark:to-pink-950">
-                <div className="squares-pattern absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none">
-                    <div className="absolute inset-0" style={{
-                        backgroundImage: `linear-gradient(to right, #000 1px, transparent 1px), linear-gradient(to bottom, #000 1px, transparent 1px)`,
-                        backgroundSize: '40px 40px'
-                    }}></div>
-                </div>
+                <SquaresPattern />
 
                 <div className="relative z-10 max-w-7xl mx-auto">
                     <div className="text-center mb-16">
@@ -465,12 +471,7 @@ function Home() {
 
             {/* CONTACT SECTION */}
             <section id="contact" className="relative py-20 px-4 bg-gradient-to-br from-slate-50 via-green-50 to-teal-50 dark:from-gray-900 dark:via-green-950 dark:to-teal-950">
-                <div className="squares-pattern absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none">
-                    <div className="absolute inset-0" style={{
-                        backgroundImage: `linear-gradient(to right, #000 1px, transparent 1px), linear-gradient(to bottom, #000 1px, transparent 1px)`,
-                        backgroundSize: '40px 40px'
-                    }}></div>
-                </div>
+                <SquaresPattern />
 
                 <div className="relative z-10 max-w-6xl mx-auto">
                     <div className="text-center mb-16">
